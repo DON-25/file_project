@@ -19,3 +19,8 @@ Thumbs.db
 # 忽略日志和临时文件（可选）
 *.log
 *.tmp
+
+# pytest 生成的缓存文件和目录
+.cache/
+.pytest_cache/
+

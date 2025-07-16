@@ -14,6 +14,5 @@ def organize_files(folder:Path,config:dict):
                     target_dir.mkdir(exist_ok=True)#不存在就创建
                     shutil.move(str(file),str(target_dir/file.name))#移动文件
                     print(f"已将文件{file.name}移动到{category}/")
-                    break
             else:
                 print(f"未找到匹配分类：{file.name}") #如果没有匹配任何分类   

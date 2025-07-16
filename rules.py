@@ -4,6 +4,6 @@ from typing import Optional
 def match_category(file: Path, rules: dict) -> Optional[str]:
     suffix = file.suffix.lower()
     for category,extensions in rules.items():
-         if suffix in extensions:
+         if suffix in extensions:#根据后缀名去判断文件类别
             return category
     return None
