@@ -59,7 +59,7 @@ file_project/
 │   └── archive.zip
 ```
 
-##单元测试
+## 单元测试
 本项目使用 pytest 作为单元测试框架，测试覆盖了以下核心功能：
 - config.py：配置加载与错误处理
 - rules.py：文件扩展名匹配分类逻辑
