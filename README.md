@@ -58,3 +58,39 @@ file_project/
 ├── 压缩包/
 │   └── archive.zip
 ```
+
+##单元测试
+本项目使用 pytest 作为单元测试框架，测试覆盖了以下核心功能：
+- config.py：配置加载与错误处理
+- rules.py：文件扩展名匹配分类逻辑
+- organizer.py：文件移动、异常、未匹配场景处理
+
+测试文件目录结构：
+```
+tests/
+├── test_config.py       # 测试配置文件加载
+├── test_rules.py        # 测试规则匹配函数
+├── test_organizer.py    # 测试整理逻辑
+```
+
+如何运行测试：
+1.请确保你已经安装 pytest：
+```
+pip install pytest
+```
+2.在项目根目录下运行所有测试：
+```
+pytest tests
+```
+3.运行成功示例输出：
+```
+================= test session starts =================
+collected 9 items
+
+tests/test_config.py ....                         [33%]
+tests/test_rules.py ....                          [66%]
+tests/test_organizer.py ...                       [100%]
+
+================== 9 passed in 0.05s ==================
+```
+
