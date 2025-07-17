@@ -1,9 +1,9 @@
 {
     "rules":{
-        "图片":[".jpg",".jpeg",".png",".gif"],
-        "文档":[".pdf",".docx",".txt"],
-        "压缩包":[".zip",".rar",".7z"],
-        "视频": [".mp4", ".avi", ".mov"]
+        "images":[".jpg",".jpeg",".png",".gif"],
+        "documents":[".pdf",".docx",".txt"],
+        "archives":[".zip",".rar",".7z"],
+        "videos": [".mp4", ".avi", ".mov"]
 
     }
 }

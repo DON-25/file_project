@@ -1,88 +1,92 @@
-# File Organizer 自动化文件整理工具
+# File Organizer – Automatic File Sorting Tool
 
-一个用于根据文件类型（图片、文档、压缩包等）自动整理目录中文件的 Python 工具。
-
----
-
-## 功能特点
-
-- 支持配置文件自定义分类规则
-- 自动将文件按类型归类移动
-- 支持多种文件扩展名
-- 命令行一键运行
+A Python tool that automatically organizes files in a directory based on their type (images, documents, archives, etc.).
 
 ---
 
-## 安装依赖
+## Features
 
-确保你已安装 Python 3.8+，然后运行：
+- Supports customizable classification rules via config file
+- Automatically sorts and moves files into categorized folders
+- Supports a wide range of file extensions
+- One-command execution from the termina
+
+---
+
+## Installation
+
+Make sure you have Python 3.8+ installed, then run:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## 项目结构说明
+## Project Structure
 ```
 file_project/
-├── config.json # 分类规则配置文件
-├── config.py # 加载配置文件的函数
-├── rules.py # 文件分类匹配规则模块
-├── organizer.py # 核心文件整理逻辑
-├── main.py # 主程序入口
-├── requirements.txt # 依赖包说明
-└── README.md # 项目说明文件
+├── config.json          # Configuration file for classification rules
+├── config.py            # Loads the configuration
+├── rules.py             # File type matching logic
+├── organizer.py         # Core file organizing logic
+├── main.py              # Program entry point
+├── requirements.txt     # Project dependencies
+└── README.md            # Project documentation
+
 ```
 
-## 使用方法
-运行主程序：
+## Usage
+Run the main script:
 ```
 python main.py
 ```
-程序将自动扫描当前目录中的所有文件，并根据配置文件将它们移动到对应的文件夹中。
+The program will automatically scan all files in the current directory and move them into folders based on the configuration.
 
-## 整理效果示例
-运行前：
+## Example Output
+Before running:
 ```
 file_project/
 ├── test.jpg
-├── 报告.docx
+├── report.docx
 ├── archive.zip
+
 ```
 运行后：
 ```
 file_project/
-├── 图片/
+├── images/
 │   └── test.jpg
-├── 文档/
-│   └── 报告.docx
-├── 压缩包/
+├── documents/
+│   └── report.docx
+├── archives/
 │   └── archive.zip
+
 ```
 
-## 单元测试
-本项目使用 pytest 作为单元测试框架，测试覆盖了以下核心功能：
-- config.py：配置加载与错误处理
-- rules.py：文件扩展名匹配分类逻辑
-- organizer.py：文件移动、异常、未匹配场景处理
+## Unit Testing
+This project uses pytest as the unit testing framework. The following core functionalities are covered by tests:
+- config.py：configuration loading and error handling
+- rules.py：extension-based file categorization
+- organizer.py：file movement, exception handling, and unmatched scenarios
 
-测试文件目录结构：
+Test directory structure:
 ```
 tests/
-├── test_config.py       # 测试配置文件加载
-├── test_rules.py        # 测试规则匹配函数
-├── test_organizer.py    # 测试整理逻辑
+├── test_config.py       # Tests configuration loading
+├── test_rules.py        # Tests file matching logic
+├── test_organizer.py    # Tests file organizing behavior
+
 ```
 
-如何运行测试：
-1.请确保你已经安装 pytest：
+How to Run Tests
+1.Make sure pytest is installed: 
 ```
 pip install pytest
 ```
-2.在项目根目录下运行所有测试：
+2.Run all tests from the project root directory:
 ```
 pytest tests
 ```
-3.运行成功示例输出：
+3.Example output on success:
 ```
 ================= test session starts =================
 collected 9 items

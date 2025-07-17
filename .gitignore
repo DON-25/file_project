@@ -1,26 +1,25 @@
-# 忽略 Python 生成的缓存文件
+# Ignore Python bytecode/cache files
 __pycache__/
 *.py[cod]
 *.pyo
 
-# 忽略虚拟环境（如果你之后建虚拟环境）
+# Ignore virtual environment directories (if created)
 .env/
 .venv/
 env/
 venv/
 
-# 忽略 VS Code 配置文件（可选）
+# Ignore VS Code settings (optional)
 .vscode/
 
-# 忽略系统文件
+# Ignore system-specific files
 .DS_Store
 Thumbs.db
 
-# 忽略日志和临时文件（可选）
+# Ignore logs and temporary files (optional)
 *.log
 *.tmp
 
-# pytest 生成的缓存文件和目录
+# Ignore pytest cache files and directories
 .cache/
 .pytest_cache/
-

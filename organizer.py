@@ -2,17 +2,17 @@ import shutil
 from pathlib import Path
 from rules import match_category
 def organize_files(folder:Path,config:dict):
-    rules=config.get("rules",{})#读取分类规则
+    rules=config.get("rules",{})#Load classification rules
     if not folder.exists() or not folder.is_dir():
-        raise ValueError(f"目标文件夹不存在或不是一个目录：{folder}")#判断是否为文件夹或目录
-    for file in folder.iterdir():#遍历文件夹
+        raise ValueError(f"Target folder does not exist or is not a directory: {folder}")# Check if path is valid
+    for file in folder.iterdir():#Iterate over folder contents
         if file.is_file():
-            category = match_category(file, rules)#判断类型
+            category = match_category(file, rules)# Determine file category
             
             if category:
-                    target_dir=folder/category#目标文件路径
-                    target_dir.mkdir(exist_ok=True)#不存在就创建
-                    shutil.move(str(file),str(target_dir/file.name))#移动文件
-                    print(f"已将文件{file.name}移动到{category}/")
+                    target_dir=folder/category#Construct target path
+                    target_dir.mkdir(exist_ok=True)#Create directory if it doesn't exist
+                    shutil.move(str(file),str(target_dir/file.name))# Move file to target directory
+                    print(f"Moved file{file.name}to{category}/")
             else:
-                print(f"未找到匹配分类：{file.name}") #如果没有匹配任何分类   
+                print(f"No matching category found for{file.name}") #No matching rule   

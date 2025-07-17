@@ -1,19 +1,19 @@
 from pathlib import Path
 from config import load_config
-from organizer import organize_files#导入模块
+from organizer import organize_files# Import required modules
 def main():
     config_path=Path("config.json")
     target_folder=Path("sample_folder")
     try:
-        config=load_config(config_path)#加载配置文件
+        config=load_config(config_path)# Load configuration file
     except Exception as e: 
-        print(f"配置加载失败：{e}")   
+        print(f"Configuration loading failed:{e}")   
         return
     try:
-        organize_files(target_folder,config)#整理文件夹
+        organize_files(target_folder,config)# Organize target folder
     except Exception as e:
-        print(f"整理失败：{e}")
+        print(f"Failed to organize files:{e}")
         return
-    print("整理完成")
-if __name__=="__main__":#启动程序
+    print("Finished")
+if __name__=="__main__":# Entry point of the program
     main()
